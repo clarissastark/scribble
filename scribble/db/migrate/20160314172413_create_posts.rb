@@ -4,8 +4,6 @@ class CreatePosts < ActiveRecord::Migration
       t.string :author
       t.string :tag
       t.string :content
-      t.datetime "created_at"
-      t.datetime "updated_at"
     end
   end
 end

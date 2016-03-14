@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scribble</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <h1>Scribbler</h1>
+  <img scr="http://wdi-scribble.herokuapp.com/assets/logo-22b5fb1e556f78819ada48709ca00b56f52a1e50c00fb713c52f0fc9ccf864ef.png" alt="Scribbler" />
+  <%= yield %>
+
+  <ul>
+    <% @posts.each do |post| %>
+    <li>
+      <a href="/posts/<%= post.id %>">
+        <%= post.name %>
+      </a>
+    </li>
+    <% end %>
+  </ul>
+</body>
+</html>
