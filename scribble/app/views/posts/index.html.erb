@@ -15,7 +15,9 @@
     <% @posts.each do |post| %>
     <li>
       <a href="/posts/<%= post.id %>">
-        <%= post.name %>
+        <%= post.title %>
+        <%= post.content %>
+        <%= post.author %>
       </a>
     </li>
     <% end %>
