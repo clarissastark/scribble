@@ -15,9 +15,9 @@
       <li>
         <%= link_to post.content, post %>
         <a href="/posts/<%= post.id %>">
-          <%= post.title %>
-          <%= post.content %>
-          <%= post.author %>
+        <p><%= post.title %></p>
+        <p><%= post.content %></p>
+        <p><%= post.author %></p>
         </a>
       </li>
       <% end %>

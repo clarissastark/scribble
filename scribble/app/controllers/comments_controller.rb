@@ -3,12 +3,12 @@ class CommentsController < ApplicationController
   #index
   def index
     @comments = Comment.all
+    @comment = Comment.new
   end
 
   #new
   def new
     @post = Post.find(params[:post_id])
-    # @comment = Comment.new
     @comment = @post.comments.new
   end
 
