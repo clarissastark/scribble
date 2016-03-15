@@ -32,6 +32,8 @@ class PostsController < ApplicationController
   #update
   def update
     @post = Post.find(params[:id])
+    @post.update(post_params)
+    redirect_to post_path(@post)
   end
 
   #delete
@@ -44,7 +46,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:author, :content, :tag)
+    params.require(:post).permit(:content, :author, :tag, :title)
   end
 
 end

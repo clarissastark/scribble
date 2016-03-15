@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Scribble</title>
+  <title>Scribbler</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
   <body>
     <h1>Scribbler</h1>
-    <img scr="http://wdi-scribble.herokuapp.com/assets/logo-22b5fb1e556f78819ada48709ca00b56f52a1e50c00fb713c52f0fc9ccf864ef.png" alt="Scribbler" />
     <%= yield %>
     <ul>
       <% @posts.each do |post| %>
       <li>
-        <%= link_to post.content, post %>
+        <%= link_to post.title, post %>
         <a href="/posts/<%= post.id %>">
-        <p><%= post.title %></p>
-        <p><%= post.content %></p>
-        <p><%= post.author %></p>
-        </a>
+        <%= post.title %>
+        <%= post.content %>
+        <%= post.author %>
+      </a>
       </li>
       <% end %>
     </ul>
+    <h4><%= link_to "(add post)", new_post_path %></h4>
   </body>
 </html>
